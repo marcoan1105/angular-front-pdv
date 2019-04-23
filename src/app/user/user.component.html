@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-5">
+    <label for="name">Nome:</label>
+    <input type="email" class="form-control" id="name" [(ngModel)]="name">
+  </div>
+  <div class="col-md-5">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" [(ngModel)]="email">
+  </div>
+  <div class="col-md-2">
+    <br>
+    <button class="btn btn-primary btn-block" (click)="sendUser()">Cadastrar</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <label for="password">Senha: </label>
+    <input type="text" class="form-control" id="password" [(ngModel)]="password">
+  </div>
+  <div class="col-md-6">
+      <label for="repassword">Repetir Senha: </label>
+      <input type="text" class="form-control" id="repassword" [(ngModel)]="repassword">
+    </div>
+</div>
+
+<swal
+  #messageErrorSwal
+  title="Oops"
+  text="{{ messageError }}"
+  type="warning"
+>
+</swal>
+
+<swal
+  #messageSuccessSwal
+  title="Sucesso"
+  text="{{ messageSuccess }}"
+  type="success"
+>
+</swal>

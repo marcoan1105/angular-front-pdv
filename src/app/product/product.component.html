@@ -1,0 +1,63 @@
+<h2>Produtos</h2>
+<div class="row">
+  <div class="col-md-12">
+    <label for="description">Descrição:</label>
+    <input type="text" class="form-control" id="description" [(ngModel)]="description">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <label for="unit">Unidade:</label>
+    <input type="text" class="form-control" id="unit" [(ngModel)]="unit">
+  </div>
+  <div class="col-md-4">
+    <label for="ncm">NCM</label>
+    <input type="text" class="form-control" id="ncm" [(ngModel)]="ncm">
+  </div>
+  <div class="col-md-4">
+    <label for="value">Valor:</label>
+    <input type="text" class="form-control" id="value" [(ngModel)]="value">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+      <label for="barcode">Barras:</label>
+      <input type="text" class="form-control" id="barcode" [(ngModel)]="barcode">
+  </div>
+  <div class="col-md-3">
+      <label for="quantities">Quantidade:</label>
+      <input type="text" class="form-control" id="quantities" [(ngModel)]="quantities">
+  </div>
+  <div class="col-md-2">
+    <br>
+    <button class="btn btn-success btn-block" (click)="saveProduct()">Salvar</button>
+  </div>
+  <div class="col-md-2">
+      <br>
+      <button class="btn btn-warning btn-block" (click)="clearProduct()">Limpar</button>
+    </div>
+ 
+</div>
+<br>
+<br>
+<div class="row" *ngFor="let prod of products; let i = index">
+  <div class="col-md-12">
+      <div class="row">
+          <div class="col-md-6">{{prod.description}}</div>
+          <div class="col-md-2">{{prod.value}}</div>
+          <div class="col-md-2">{{prod.quantities}}</div>
+          <div class="col-md-2">
+            <button class="btn btn-primary btn-block" (click)="changeProduct(i)">Editar</button>
+          </div>
+        </div>
+        <br>
+  </div>  
+</div>
+
+<swal
+  #productSuccess
+  title="Sucesso"
+  text='Produto salvo com sucesso'
+  type="success"
+>
+</swal>
